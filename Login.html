@@ -11,10 +11,10 @@
     <form id="login-form">
         <label for="username">Benutzername:</label>
         <input type="text" id="username" required>
-        
+
         <label for="password">Passwort:</label>
         <input type="password" id="password" required>
-        
+
         <button type="submit">Anmelden</button>
     </form>
 
@@ -24,7 +24,7 @@
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            // Vorhandene Spieler (Benutzername → Seite)
+            // Liste der Spieler mit zugehörigen Seiten
             const users = {
                 "spieler1": { password: "passwort1", page: "spieler1.html" },
                 "spieler2": { password: "passwort2", page: "spieler2.html" }
@@ -34,7 +34,8 @@
             const password = document.getElementById("password").value;
 
             if (users[username] && users[username].password === password) {
-                // Erfolgreicher Login → Weiterleitung zur Spielerseite
+                // Login erfolgreich → Speichere Session & leite weiter
+                sessionStorage.setItem("loggedInUser", username);
                 window.location.href = users[username].page;
             } else {
                 document.getElementById("error-message").textContent = "Falscher Benutzername oder Passwort!";
