@@ -3,21 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | D&D</title>
-    <link rel="stylesheet" href="style.css">
+    <title>D&D Login</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Login 2 </h1>
-        <p>Gib deinen Spielernamen und dein Passwort ein.</p>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Spielername" required>
-            <input type="password" id="password" placeholder="Passwort" required>
-            <button type="submit">Anmelden</button>
-        </form>
-        <p id="error" style="color: red; display: none;">Falscher Benutzername oder Passwort!</p>
-    </div>
+    <h1>Dungeons & Dragons Login</h1>
 
-    <script src="login.js"></script>
+    <form id="login-form">
+        <label for="username">Benutzername:</label>
+        <input type="text" id="username" required>
+        
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" required>
+        
+        <button type="submit">Anmelden</button>
+    </form>
+
+    <p id="error-message" style="color: red;"></p>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Vorhandene Spieler (Benutzername → Seite)
+            const users = {
+                "spieler1": { password: "passwort1", page: "spieler1.html" },
+                "spieler2": { password: "passwort2", page: "spieler2.html" }
+            };
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (users[username] && users[username].password === password) {
+                // Erfolgreicher Login → Weiterleitung zur Spielerseite
+                window.location.href = users[username].page;
+            } else {
+                document.getElementById("error-message").textContent = "Falscher Benutzername oder Passwort!";
+            }
+        });
+    </script>
 </body>
 </html>
