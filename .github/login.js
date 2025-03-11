@@ -1,7 +1,7 @@
 // Vorab definierte Benutzer
 const users = {
-    "P1": { password: "P1", sheet: "sheet1.html" },
-    "P2": { password: "P2", sheet: "sheet2.html" },
+    "P1": { password: "P1", sheet: "spieler1.html" },
+    "P2": { password: "P2", sheet: "spieler2.html" },
     "GM": { password: "GM", sheet: "master.html" }
 };
 
