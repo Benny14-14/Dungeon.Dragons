@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | D&D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <p>Gib deinen Spielernamen und dein Passwort ein.</p>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Spielername" required>
+            <input type="password" id="password" placeholder="Passwort" required>
+            <button type="submit">Anmelden</button>
+        </form>
+        <p id="error" style="color: red; display: none;">Falscher Benutzername oder Passwort!</p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
