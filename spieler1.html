@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spieler 1 | D&D</title>
+    <title>Spieler | D&D</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Willkommen, Spieler 1!</h1>
-    <p>Hier sind deine aktuellen Werte:</p>
+
+    <h1>Willkommen, Spieler!</h1>
+
+    <div class="bar-container">
+        <p>❤️ HP: <span id="hp-text">100 / 100</span></p>
+        <div class="bar">
+            <div id="hp-bar"></div>
+        </div>
+    </div>
+
+    <div class="bar-container">
+        <p>🔵 Mana: <span id="mana-text">50 / 50</span></p>
+        <div class="bar">
+            <div id="mana-bar"></div>
+        </div>
+    </div>
+
+    <button onclick="takeDamage(20)">Schaden: -20 HP</button>
+    <button onclick="useMana(10)">Mana verbrauchen: -10</button>
+    <button onclick="heal(15)">Heilen: +15 HP</button>
+    <button onclick="restoreMana(10)">Mana regenerieren: +10</button>
+
+    <script src="script.js"></script>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
     <table id="data-table" border="1">
         <thead>
