@@ -29,54 +29,6 @@
     <button onclick="heal(15)">Heilen: +15 HP</button>
     <button onclick="restoreMana(10)">Mana regenerieren: +10</button>
 
-    <script src="script.js"></script>
-    
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-    <table id="data-table" border="1">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>HP</th>
-                <th>Mana</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <script>
-        // Google Sheets CSV-URL für Spieler 1
-        const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTx46hOTOnttDbdtc2kMYyiXZA__d0v5vOqWSfj-W4e3S8g5bP_HoxOd7gdvJDZTuWqP6v6ZfZ_z8k9/pub?gid=1526898814&single=true&output=csv";
-
-        async function fetchData() {
-            const response = await fetch(SHEET_URL);
-            const data = await response.text();
-            updateTable(data);
-        }
-
-        function updateTable(csvText) {
-            const rows = csvText.split("\n").map(row => row.split(","));
-            const tableBody = document.querySelector("#data-table tbody");
-            tableBody.innerHTML = "";
-
-            rows.forEach(row => {
-                let tr = document.createElement("tr");
-                row.forEach(cell => {
-                    let td = document.createElement("td");
-                    td.textContent = cell;
-                    tr.appendChild(td);
-                });
-                tableBody.appendChild(tr);
-            });
-        }
-
-        // Daten einmal laden und alle 10 Sekunden aktualisieren
-        fetchData();
-        setInterval(fetchData, 10000);
-    </script>
+    <script src="script2.js"></script>
 </body>
 </html>
